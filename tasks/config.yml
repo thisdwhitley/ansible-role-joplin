@@ -1,0 +1,16 @@
+---
+
+- name: config| make sure sqlite3 is installed [{{ user.username }}]
+  become: true
+  become_user: root
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - sqlite
+    - fuse
+
+- name: config| run through some sqlite commands to update settings [{{ user.username }}]
+  shell: sqlite3 ~/.config/joplin-desktop/database.sqlite "INSERT OR REPLACE INTO settings VALUES('{{ item.key }}','{{ item.val }}');"
+  with_items:
+    - "{{ user.settings }}"

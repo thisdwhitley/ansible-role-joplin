@@ -1,0 +1,22 @@
+---
+# the main.yml file will simply be used to include necessary other task files
+
+- include_tasks: 
+    file: install.yml
+    apply:
+      become: true
+      become_user: "{{ user.username }}"
+  with_items: "{{ users }}"
+  loop_control:
+    loop_var: user
+  when: users is defined
+
+- include_tasks: 
+    file: config.yml
+    apply:
+      become: true
+      become_user: "{{ user.username }}"
+  with_items: "{{ users }}"
+  loop_control:
+    loop_var: user
+  when: user.settings is defined
