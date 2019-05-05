@@ -46,6 +46,8 @@ but I think I'm ok with that.
   silly command to find out what was set how:
   `sqlite3 ~/.config/joplin-desktop/database.sqlite .dump | grep '^INSERT INTO
   settings'`
+* testing the configuration in a container *might not be possible*:
+  <https://github.com/AppImage/AppImageKit/wiki/FUSE>
 
 ## Requirements
 
@@ -107,6 +109,8 @@ ansible-galaxy install -p ./roles -r requirements.yml
 
 ## Testing
 
+Testing is not working as well as I'd like at this point.
+
 I am relying heavily on the work by Jeff Geerling in using molecule for testing
 this role.  I have, however, modified the tests to make them specific to what I
 am attempting to accomplish but this could still use some work.
@@ -125,7 +129,8 @@ Please review those files, but here is a list of OSes currently being tested
 
 ## To-do
 
-* N/A
+* figure out an appropriate test.  Using AppImages does not work in containers
+  [because of FUSE](https://github.com/AppImage/AppImageKit/wiki/FUSE#docker)
 
 ## References
 
