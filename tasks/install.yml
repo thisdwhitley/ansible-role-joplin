@@ -22,7 +22,7 @@
 
 - name: install| check the contents of ~/.joplin/VERSION [{{ user.username }}]
   set_fact:
-    VERSION_contents: "{{ lookup('file', '~/.joplin/VERSION') }}"
+    VERSION_contents: "{{ lookup('file', '/home/user.username/.joplin/VERSION') }}"
   when: VERSION_file.stat.exists
 
 - name: install| when there is no VERSION or it's contents don't match, do these
