@@ -13,8 +13,9 @@ At a very high level, this role will:
 
 * I have attempted to Ansiblize the developer's installation/update script and
   it is working sufficiently at this point to "install" the AppImage
-* [*optional*] I am trying to figure out how to set up the settings including
-  synchronization (both done via a sqlite database...)
+* [*optional*] if settings are provided, the CLI version will be installed and
+  used to create a database, which will be configured via the command line and
+  then copied to the desktop directory...seems to work
 
 This role is currently passing my pretty rudimentary tests for the following
 operating systems:

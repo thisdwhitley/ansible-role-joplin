@@ -18,6 +18,7 @@
   command: ~/.joplin-bin/bin/joplin config '{{ item.key }}' '{{ item.val }}'
   with_items:
     - "{{ user.settings }}"
+  no_log: true
 
 - name: config| create GUI config directory [{{ user.username }}]
   file:
