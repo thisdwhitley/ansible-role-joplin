@@ -45,7 +45,8 @@ but I think I'm ok with that.
   what settings were set was to configure Joplin as I wanted it, then to do a
   silly command to find out what was set how:
   `sqlite3 ~/.config/joplin-desktop/database.sqlite .dump | grep '^INSERT INTO
-  settings'`
+  settings'`  ***UPDATE:*** check out
+  [the terminal config page](https://joplinapp.org/terminal/)
 * testing the configuration in a container *might not be possible*:
   <https://github.com/AppImage/AppImageKit/wiki/FUSE>
 
