@@ -12,7 +12,7 @@
 - name: config| install the CLI [{{ user.username }}]
   npm:
     name: joplin
-    path: ~/.jopin-bin
+    path: ~/.joplin-bin
 
 - name: config| use CLI to generate database and update settings [{{ user.username }}]
   command: ~/.joplin-bin/bin/joplin config '{{ item.key }}' '{{ item.val }}'
