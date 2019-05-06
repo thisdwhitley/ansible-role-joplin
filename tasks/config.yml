@@ -9,10 +9,14 @@
   with_items:
     - npm
 
-- name: config| install the CLI [{{ user.username }}]
-  npm:
-    name: joplin
+- name: config| create CLI binary directory [{{ user.username }}]
+  file:
     path: ~/.joplin-bin
+    state: directory
+
+# I could not get the npm module to work appropriately here and I don't know why
+- name: config| install joplin via command module [{{ user.username }}]
+  command: NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin
 
 - name: config| use CLI to generate database and update settings [{{ user.username }}]
   command: ~/.joplin-bin/bin/joplin config '{{ item.key }}' '{{ item.val }}'
