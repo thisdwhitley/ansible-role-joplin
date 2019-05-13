@@ -96,4 +96,4 @@
         content: "{{ latest_version }}"
         dest: ~/.joplin/VERSION
   when: (not VERSION_file.stat.exists) or 
-        (VERSION_contents is version(latest_version, '!='))
+        (VERSION_contents != latest_version)
