@@ -49,7 +49,7 @@
     # chmod +x ~/.joplin/Joplin.AppImage
     - name: install| download the latest version [{{ user.username }}]
       get_url:
-        url: https://github.com/laurent22/joplin/releases/download/v{{ latest_version }}/Joplin-{{ latest_version }}-x86_64.AppImage
+        url: https://github.com/laurent22/joplin/releases/download/v{{ latest_version }}/Joplin-{{ latest_version }}.AppImage
         dest: ~/.joplin/Joplin.AppImage
         mode: 0755
     #####
