@@ -64,13 +64,13 @@
     ############################################################################
     #####
     # (cd $TMPDIR && ~/.joplin/Joplin.AppImage --appimage-extract joplin.desktop &> /dev/null)
-    - name: install| extract the AppImage to find buildid [{{ user.username }}]
-      shell: cd /tmp && ~/.joplin/Joplin.AppImage --appimage-extract joplin.desktop &> /dev/null
+#    - name: install| extract the AppImage to find buildid [{{ user.username }}]
+#      shell: cd /tmp && ~/.joplin/Joplin.AppImage --appimage-extract joplin.desktop &> /dev/null
     #####
     # APPIMAGE_VERSION=$(grep "^X-AppImage-BuildId=" $TMPDIR/squashfs-root/joplin.desktop | head -n 1 | cut -d " " -f 1)
-    - name: install| capture the BuildId from the AppImage itself [{{ user.username }}]
-      command: awk '/^X-AppImage-BuildId=/ {print $1;exit;}' /tmp/squashfs-root/joplin.desktop
-      register: BUILDID_line
+#    - name: install| capture the BuildId from the AppImage itself [{{ user.username }}]
+#      command: awk '/^X-AppImage-BuildId=/ {print $1;exit;}' /tmp/squashfs-root/joplin.desktop
+#      register: BUILDID_line
     #####
     # rm -rf $TMPDIR/squashfs-root
     - name: install| remove the extracted files [{{ user.username }}]
