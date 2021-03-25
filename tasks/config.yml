@@ -10,7 +10,7 @@
     - sqlite
 
 - name: config| use sqlite3 to update settings passed [{{ user.username }}]
-  command: /usr/bin/sqlite3 ~/.config/joplin-desktop/database.sqlite "RELACE INTO settings(key,value) VALUES('{{ item.key }}' '{{ item.val }}');"
+  command: /usr/bin/sqlite3 ~/.config/joplin-desktop/database.sqlite "REPLACE INTO settings(key,value) VALUES('{{ item.key }}', '{{ item.val }}');"
   with_items:
     - "{{ user.settings }}"
   no_log: true
